@@ -1,0 +1,32 @@
+version: 2
+
+models:
+
+    - name: sales
+      description: sales table that shows the sales info
+      tests:
+        - unique:
+            column_name: "(orders_id || '-' || products_id)"
+            
+      columns:
+          - name: orders_id
+            description: list of all the orders ID 
+            tests : 
+            - not_null 
+
+          - name: products_id
+            description: shows all the products ID 
+            tests : 
+            - not_null 
+          - name: qty
+
+          - name: turnover
+            description: the turnover of the products
+            tests : 
+            - not_null 
+          - name: purchase_cost
+            description: list the purchase cost for the product
+            tests : 
+            - not_null 
+          - name: margin
+            description: the margin which is the turnover - prurchase cost
